@@ -39,6 +39,7 @@ class FigureParser:
             except Exception as e:
                 print("Something went wrong:")
                 print(str(e), "\n")
+                self.is_end()
 
 
     def is_end(self):
