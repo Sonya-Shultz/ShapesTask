@@ -1,10 +1,10 @@
 from Shapes2D.FigureParser import FigureParser
 
-
+# Inicialization of main loop of 2d-Shape parser
 fp = FigureParser()
 fp.start()
 
-# Shapes from string
+# Create shapes from strings
 # test_data = ["Square TopRight 1 1 Side 1", "Rectangle TopRight 2 2 BottomLeft 1 1", "Circle Center 1 1 Radius 2"]
 # for el in test_data:
 #     fp.set_from_str(el)

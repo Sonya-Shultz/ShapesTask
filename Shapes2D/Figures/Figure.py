@@ -2,7 +2,14 @@ from Shapes2D.Errors.CustomErrors import NoSuchFiguresPatternError
 
 
 class Figure:
-    name = "Figure"
+    """
+        Main class of shapes.
+        Contains its name.
+
+        Const:
+        - NAME (string): Name of the shape.
+    """
+    NAME = "Figure"
 
     def __init__(self, data):
         self.parse_str(data)

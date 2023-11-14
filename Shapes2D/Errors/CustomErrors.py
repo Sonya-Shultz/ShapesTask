@@ -1,3 +1,5 @@
+# File with custom errors
+
 class NegativeValueOfMetrixError(Exception):
     def __init__(self, metrix_name, metrix_val):
         message = f"Negative value for {metrix_name} ({metrix_val})."
