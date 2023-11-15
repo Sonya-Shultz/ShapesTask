@@ -23,8 +23,14 @@ def test_FigureParserGetFeomStr_positive_Circle():
 
 def test_FigureParserGetFeomStr_positive_Triangle():
     fp.set_from_str("Triangle Point1 0 0 Point2 1 1 Point3 0 1")
-    p = 3
-    a = 5
+    p = 3.414213562373095
+    a = 0.49999999999999983
+    assert fp.res_to_str() == f"Triangle Perimeter {p} Area {a}"
+
+def test_FigureParserGetFeomStr_positive_Triangle2():
+    fp.set_from_str("Triangle Point1 0 0 Point2 2 2 Point3 0 2")
+    p = 6.82842712474619
+    a = 1.9999999999999993
     assert fp.res_to_str() == f"Triangle Perimeter {p} Area {a}"
 
 def test_FigureParserGetFeomStr_negative_figure():
