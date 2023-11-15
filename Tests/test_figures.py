@@ -33,6 +33,11 @@ def test_FigureParserGetFeomStr_positive_Triangle2():
     a = 1.9999999999999993
     assert fp.res_to_str() == f"Triangle Perimeter {p} Area {a}"
 
+def test_FigureParserGetFeomStr_positive_Triangle_oneline():
+    fp.set_from_str("Triangle Point1 0 0 Point2 2 2 Point3 1 1")
+    p = 2 * (2*2**0.5)
+    assert fp.res_to_str() == f"Triangle Perimeter {p} Area 0.0"
+
 def test_FigureParserGetFeomStr_negative_figure():
     with pytest.raises(NoSuchFiguresPatternError):
         fp.set_from_str("Squatttte TopRight 1 1 Side 1")
@@ -42,6 +47,10 @@ def test_FigureParserGetFeomStr_negative_missingAttribute():
         fp.set_from_str("Square TopRight 1 1")
     with pytest.raises(MissingDataError):
         fp.set_from_str("Square 1 1 Side 1")
+
+def test_FigureParserGetFeomStr_negative_missingAttribute():
+    with pytest.raises(MissingDataError):
+        fp.set_from_str("Triangle Point2 2 2 Point3 1 1")
 
 def test_FigureParserGetFeomStr_negative_missingAttributeValue():
     with pytest.raises(CantParseCoordinatesError):

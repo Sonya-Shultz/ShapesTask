@@ -1,5 +1,6 @@
 from Shapes2D.Figures.Figure import Figure
 from Shapes2D.Figures.SimplerFigures.Dot import Dot
+from Shapes2D.Errors.CustomErrors import *
 
 class Triangle(Figure):
     NAME = "Triangle"
