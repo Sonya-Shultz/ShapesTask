@@ -21,6 +21,11 @@ def test_FigureParserGetFeomStr_positive_Circle():
     tmp = 3.14159265359 * 4
     assert  fp.res_to_str() == f"Circle Perimeter {tmp} Area {tmp}"
 
+def test_FigureParserGetFeomStr_positive_Triangle():
+    fp.set_from_str("Triangle Point1 0 0 Point2 1 1 Point3 0 1")
+    p = 3
+    a = 5
+    assert fp.res_to_str() == f"Triangle Perimeter {p} Area {a}"
 
 def test_FigureParserGetFeomStr_negative_figure():
     with pytest.raises(NoSuchFiguresPatternError):
@@ -70,3 +75,4 @@ def test_DotMoreThan_negative():
         d1 = Dot(2, -2, 2)
         d2 = Dot(3, 0, -4, 6)
         d1.more_then(d2)
+

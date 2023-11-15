@@ -2,6 +2,7 @@ from Shapes2D.Figures.Rectangle import Rectangle
 from Shapes2D.Figures.Circle import Circle
 from Shapes2D.Figures.Figure import Figure
 from Shapes2D.Figures.Square import Square
+from Shapes2D.Figures.Triangle import Triangle
 
 
 class FigureParser:
@@ -18,7 +19,7 @@ class FigureParser:
     """
     input_str = ""
     figure = None
-    FIGURES_NAMES = ["Square", "Rectangle", "Circle"]
+    FIGURES_NAMES = ["Square", "Rectangle", "Circle", "Triangle"]
     status = True
 
     def start(self):
@@ -102,6 +103,8 @@ class FigureParser:
             fig = Rectangle(self.input_str)
         elif self.FIGURES_NAMES[2]+" " in self.input_str:
             fig = Circle(self.input_str)
+        elif self.FIGURES_NAMES[3]+" " in self.input_str:
+            fig = Triangle(self.input_str)
         else:
             fig = Figure(self.input_str)
         return fig
